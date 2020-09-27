@@ -3,8 +3,8 @@ from tkinter import filedialog, Text
 import os
 
 root = tk.Tk()
-root.geometry("800x800")
-root.resizable()
+root.geometry("600x600")
+root.resizable(0, 0)
 apps = []
 
 
@@ -23,9 +23,9 @@ canvas.pack()
 
 frame = tk.Frame(master=root,
                  width=300,
-                 height=300,
+                 height=500,
                  bg='white')
-frame.place(relwidth=0.8, relheight=0.8, relx=0.1,
+frame.place(relwidth=0.8, relheight=0.6, relx=0.1,
             rely=0.1)
 
 openFile = tk.Button(root, text="Open File", padx=10,
