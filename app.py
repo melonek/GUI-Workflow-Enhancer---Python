@@ -1,6 +1,9 @@
 import tkinter as tk
 from tkinter import filedialog, Text
 import os
+import sys
+import subprocess
+import webbrowser
 
 root = tk.Tk()
 root.geometry("600x600")
@@ -14,12 +17,17 @@ def addApp():
         widget.destroy()
 
     filename = filedialog.askopenfilename(
-        initialdir="/", title="Select File", filetypes=(("Disk iMaGe", "*.dmg"), ("all files", "*.*")))
+        initialdir="/", title="Select File", filetypes=(("app", "*.app"), ("all files", "*.*")))
     apps.append(filename)
     print(filename)
     for app in apps:
         label = tk.Label(frame, text=app, bg="gray")
         label.pack()
+
+
+def runApps():
+    for app in apps:
+        subprocess.call(app)
 
 
 canvas = tk.Canvas(root, height=500, width=500, bg='#263D42')
